@@ -16,7 +16,7 @@
          </template>
        </vue-instagram>
      </div>
-   <v-btn>Press</v-btn>
+   <v-btn>Press To See More</v-btn>
  </center>
  </div>
 </template>
