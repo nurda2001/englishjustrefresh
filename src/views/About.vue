@@ -1,6 +1,8 @@
 <template>
   <div class="container">
   	<center>
+  		<span v-if="loading"  uk-spinner="ratio: 4.5"></span>
+  		<div v-else>
   		<h1 class="title">О нас</h1>
 <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
   			    <div>
@@ -24,12 +26,13 @@
         </div>
              </div>
 </div>
-<div class="uk-child-width-1-21s uk-grid-match" uk-grid>
+<div class="uk-child-width-1-1@s uk-grid-match" uk-grid>
 	<div>
 		<div class="uk-card uk-card-default uk-card-hover uk-card-body">
           <img src="http://www.englishinaktau.kz/img/price.jpg">
 	</div>
 	</div>
+</div>
 </div>
 </center>
 </div>
@@ -37,7 +40,21 @@
 
 <script>
 	export default{
- 
+ data(){
+    return{
+      loading: true
+    }
+  },
+  methods:{
+       showToggle(){
+       setTimeout(() =>{
+        this.loading = false
+       }, 2000)
+     }
+  },
+  mounted(){
+    this.showToggle()
+  }
 	}
 </script>
 <style scoped>

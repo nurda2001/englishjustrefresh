@@ -1,7 +1,9 @@
 <template>
   <div>
    <center> 
-     <div class="container">
+    <span v-if="loading"  uk-spinner="ratio: 4.5"></span>
+    
+     <div v-else class="container">
       <div class="uk-light uk-background-secondary uk-padding">
         <vue-instagram :token="token" :count="18" class="columns is-multiline is-mobile">
           <template slot="feeds" slot-scope="props">
@@ -35,9 +37,32 @@ export default {
   },
   data(){
     return{
-      token: '1389524837.8675595.0270278cc00d42b9a9e2a7ca03e24f08'
+      token: '1389524837.8675595.0270278cc00d42b9a9e2a7ca03e24f08',
+      loading: true
     }
+  },
+  methods:{
+       showToggle(){
+       setTimeout(() =>{
+        this.loading = false
+       }, 2000)
+     }
+  },
+  mounted(){
+    this.showToggle()
   }
 
 }
 </script>
+
+
+
+<style scoped>
+.centersp{
+  margin:50%;
+
+
+}
+
+  
+</style>
