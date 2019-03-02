@@ -5,7 +5,7 @@
     
      <div v-else class="container">
       <div class="uk-light uk-background-secondary uk-padding">
-        <vue-instagram :token="token" :count="6" :tags="['#МыТолькоВбизнесЦентреЗвездаАктау14']" class="columns is-multiline is-mobile" mediatype="image">
+        <vue-instagram :token="token" :count="21"  class="columns is-multiline is-mobile">
           <template slot="feeds" slot-scope="props">
             <div class="column is-4-desktop is-6-tablet is-6-mobile">
               <div class="card">
@@ -30,7 +30,6 @@
 import VueInstagram from 'vue-instagram'
  
 export default {
-  name: 'App',
  
   components: {
     VueInstagram
