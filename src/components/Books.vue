@@ -2,6 +2,7 @@
   <div>
    <center> 
      <div class="container">
+      <div class="uk-light uk-background-secondary uk-padding">
         <vue-instagram :token="token" :count="20" class="columns is-multiline is-mobile">
           <template slot="feeds" slot-scope="props">
             <div class="column is-4-desktop is-6-tablet is-6-mobile">
@@ -15,8 +16,9 @@
            </div>
          </template>
        </vue-instagram>
+       <a class="uk-button uk-button-default" href="https://www.instagram.com/english.zvezda.aktau/?hl=ru">Увидеть больше</a>
      </div>
-   <v-btn>Press To See More</v-btn>
+ </div>
  </center>
  </div>
 </template>
