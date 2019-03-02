@@ -5,7 +5,7 @@
     
      <div v-else class="container">
       <div class="uk-light uk-background-secondary uk-padding">
-        <vue-instagram :token="token" :count="18" class="columns is-multiline is-mobile">
+        <vue-instagram :token="token" :count="6" :tags="['#МыТолькоВбизнесЦентреЗвездаАктау14']" class="columns is-multiline is-mobile" mediatype="image">
           <template slot="feeds" slot-scope="props">
             <div class="column is-4-desktop is-6-tablet is-6-mobile">
               <div class="card">
