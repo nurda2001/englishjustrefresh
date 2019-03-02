@@ -3,7 +3,7 @@
    <center> 
      <div class="container">
       <div class="uk-light uk-background-secondary uk-padding">
-        <vue-instagram :token="token" :count="20" class="columns is-multiline is-mobile">
+        <vue-instagram :token="token" :count="18" class="columns is-multiline is-mobile">
           <template slot="feeds" slot-scope="props">
             <div class="column is-4-desktop is-6-tablet is-6-mobile">
               <div class="card">
@@ -35,7 +35,7 @@ export default {
   },
   data(){
     return{
-      token: '3132201343.f88d3a0.37e01f1cb6554b83b0efd37dd59417de'
+      token: '1389524837.8675595.0270278cc00d42b9a9e2a7ca03e24f08'
     }
   }
 
