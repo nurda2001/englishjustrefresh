@@ -6,8 +6,10 @@ import './registerServiceWorker'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import VueInstagram from 'vue-instagram'
+
  
-Vue.use(VueInstagram)
+ 
+Vue.use(VueInstagram), 
 
 
 Vue.use(Vuetify)

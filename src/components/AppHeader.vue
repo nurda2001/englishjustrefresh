@@ -12,7 +12,7 @@
 			</v-list-tile>
 		</v-list>
 		</v-navigation-drawer>
-		<v-toolbar  fixed="false" app color="White">
+		<v-toolbar  fixed app color="White">
 			<v-toolbar-side-icon class="hidden-md-and-up" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
 			<router-link to="/" tag="span" style=" cursor: pointer">
 			<v-toolbar-title v-text="'EnglishInAktau'"></v-toolbar-title>
@@ -39,6 +39,11 @@
 		computed:{
 			menuItems(){
 				return[
+				       {
+                       	icon: 'attach_money',
+                       	title: 'Прайс-Лист',
+                       	route: '/price'
+                       },
                        {
                        	icon: 'visibility', 
                        	title: 'Галлерея', 

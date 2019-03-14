@@ -6,6 +6,10 @@ import Words from '@/components/Words.vue'
 import Signin from '@/components/Signin.vue'
 import Profile from '@/components/Profile.vue'
 import Signup from '@/components/Signup.vue'
+import Price from '@/components/Price.vue'
+import Courses from '@/components/Courses.vue'
+import Course from '@/components/Course.vue'
+
 
 Vue.use(Router)
 
@@ -58,6 +62,24 @@ export default new Router({
       name: 'Contacts',
       
       component: Profile
+    },
+    {
+      path: '/price',
+      name: 'Price',
+      
+      component: Price
+    },
+    {
+    path: '/courses',
+    name: 'Courses',
+    component : Courses
+    },
+    {
+    path: '/courses/:id',
+    name: 'Courses',
+    props: true,
+    component : Course
     }
-  ]
+  
+]
 })

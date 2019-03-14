@@ -26,13 +26,6 @@
         </div>
              </div>
 </div>
-<div class="uk-child-width-1-1@s uk-grid-match" uk-grid>
-	<div>
-		<div class="uk-card uk-card-default uk-card-hover uk-card-body">
-          <img src="http://www.englishinaktau.kz/img/price.jpg">
-	</div>
-	</div>
-</div>
 </div>
 </center>
 </div>

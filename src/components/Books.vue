@@ -2,10 +2,9 @@
   <div>
    <center> 
     <span v-if="loading"  uk-spinner="ratio: 4.5"></span>
-    
-     <div v-else class="container">
-      <div class="uk-light uk-background-secondary uk-padding">
-        <vue-instagram :token="token" :count="21"  class="columns is-multiline is-mobile">
+    <div v-else class="uk-child-width-1-2@s uk-grid" uk-grid="">
+     <div  class="container">
+        <vue-instagram :token="token" :count="21"  class="columns is-multiline is-mobile" mediaType="image"  >
           <template slot="feeds" slot-scope="props">
             <div class="column is-4-desktop is-6-tablet is-6-mobile">
               <div class="card">
@@ -19,7 +18,7 @@
          </template>
        </vue-instagram>
        <a class="uk-button uk-button-default" href="https://www.instagram.com/english.zvezda.aktau/?hl=ru">Увидеть больше</a>
-     </div>
+   </div>
  </div>
  </center>
  </div>

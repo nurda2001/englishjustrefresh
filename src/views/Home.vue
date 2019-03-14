@@ -1,30 +1,52 @@
 <template>
-	<div class="container">
+	<v-container>
 		
-			<h1>Испытайте настоящие чувства вместе с нами!</h1>
-		
+			
 			<div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
     <div>
-        <div class="uk-card uk-card-hover uk-card-body uk-card">
-            <h3 class="uk-card-title">Днем</h3>
-            <p>Когда все люди бегут по разным делам!</p>
-        </div>
+         <v-carousel style="cursor: pointer;">
+    <v-carousel-item
+      v-for="item in items"
+      :key="item.id"
+      :src="item.src"
+      @click="LoadCourse(item.id)"
+    >
+    <center>
+      <div class="title">{{item.title}}</div>
+    </center>
+    </v-carousel-item>
+  </v-carousel>
     </div>
     <div>
-        <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-card">
-            <h3 class="uk-card-title">Default</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        </div>
-    </div>
+      Add something here
 		</div>
+  </div>
 	
-</div>
+</v-container>
 </template>
 
 <script>
-	
+export default {
+    computed:{
+     items(){
+      return this.$store.getters.loadedCourses
+     }
+  },
+    methods:{
+      LoadCourse(id){
+        return this.$router.push('/courses/' + id)
+      }
+    }
+  }
 </script>
 
 <style scoped>
-	
+.title{
+  position: absolute;
+  bottom: 50px;
+  background-color: rgba(0,0,0,0.5);
+  color:white;
+  font-size: 2em;
+  padding: 30px;
+}
 </style>
