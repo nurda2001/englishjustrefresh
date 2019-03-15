@@ -17,6 +17,7 @@
 			<router-link to="/" tag="span" style=" cursor: pointer">
 			<v-toolbar-title v-text="'EnglishInAktau'"></v-toolbar-title>
 		</router-link>
+		<v-toolbar-title v-text="'Для Взрослых и детей'" style="font-weight: 300;" class="hidden-sm-and-down"></v-toolbar-title>
 			<v-spacer></v-spacer>
 			<v-toolbar-items class="hidden-sm-and-down">
 				<v-btn v-for="(item, i) in menuItems" flat :key="`menuItem${i}`" :to="item.route" >
@@ -37,8 +38,22 @@
 			}
 		},
 		computed:{
+			isUserAutheticated(){
+        return this.$store.getters.isUserAutheticated
+      },
 			menuItems(){
-				return[
+				return this.isUserAutheticated ?
+				[
+				       {
+                       	icon: 'explore',
+                       	title: 'Новости',
+                       	route: '/news'
+                       },
+                       {
+                       	icon: 'explore',
+                       	title: 'Создание',
+                       	route: '/creatingNews'
+                       },
 				       {
                        	icon: 'attach_money',
                        	title: 'Прайс-Лист',
@@ -64,9 +79,51 @@
                        	title: 'О нас',
                        	route: '/about'
                        }
+				] : [
+                   {
+                       	icon: 'attach_money',
+                       	title: 'Прайс-Лист',
+                       	route: '/price'
+                       },
+                       {
+                       	icon: 'explore',
+                       	title: 'Новости',
+                       	route: '/news'
+                       },
+                       {
+                       	icon: 'visibility', 
+                       	title: 'Галлерея', 
+                       	route: '/gallery'
+                       },
+                         {
+                       	icon: 'account_circle',
+                       	title: 'Для Студентов',
+                       	route: '/students'
+                       },
+                         {
+                       	icon: 'contacts',
+                       	title: 'Контакты',
+                       	route: '/contacts'
+                       },
+                         {
+                       	icon: 'contact_support',
+                       	title: 'О нас',
+                       	route: '/about'
+                       },
+                       {
+                       	icon: 'input',
+                       	title: 'Войти',
+                       	route: '/Войти'
+                       }
 				]
 			}
-		}
+		},
+		watch:{
+      isUserAutheticated(val){
+        if(val === false)
+          this.$router.push({ name: 'home' })
+      }
+    }
 	}
 </script>
 

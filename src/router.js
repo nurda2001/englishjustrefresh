@@ -9,6 +9,11 @@ import Signup from '@/components/Signup.vue'
 import Price from '@/components/Price.vue'
 import Courses from '@/components/Courses.vue'
 import Course from '@/components/Course.vue'
+import News from '@/components/News.vue'
+import New from '@/components/New.vue'
+import Create from '@/components/CreateNews.vue'
+import SignUp from '@/components/Signup.vue'
+import SignIn from '@/components/Signin.vue'
 
 
 Vue.use(Router)
@@ -79,6 +84,32 @@ export default new Router({
     name: 'Courses',
     props: true,
     component : Course
+    },
+    {
+    path: '/news',
+    name: 'News',
+    component : News
+    },
+    {
+    path: '/news/:id',
+    name: 'News',
+    props: true,
+    component : New
+    },
+    {
+      path: '/creatingNews',
+      name: 'CRN',
+      component: Create
+    },
+        {
+      path:'/Регистрация',
+      name: 'signup',
+      component: SignUp
+    },
+    {
+      path:'/Войти',
+      name: 'signin',
+      component: SignIn
     }
   
 ]

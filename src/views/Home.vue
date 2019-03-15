@@ -18,7 +18,18 @@
   </v-carousel>
     </div>
     <div>
-      Add something here
+      <v-carousel style="cursor: pointer;">
+    <v-carousel-item
+      v-for="novos in news"
+      :key="novos.id"
+      :src="novos.imageUrl"
+      @click="LoadNew(novos.id)"
+    >
+    <center>
+      <div class="title">{{novos.title}}</div>
+    </center>
+    </v-carousel-item>
+  </v-carousel> 
 		</div>
   </div>
 	
@@ -30,11 +41,17 @@ export default {
     computed:{
      items(){
       return this.$store.getters.loadedCourses
+     },
+     news(){
+      return this.$store.getters.loadedNews
      }
   },
     methods:{
       LoadCourse(id){
         return this.$router.push('/courses/' + id)
+      },
+      LoadNew(id){
+        return this.$router.push('/news/' + id)
       }
     }
   }

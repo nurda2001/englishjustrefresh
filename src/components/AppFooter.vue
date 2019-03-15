@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<v-footer :fixed="false"  app >
+		<v-footer   app >
 			<p>by the_bloy</p>
 		</v-footer>
 	</div>
