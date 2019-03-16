@@ -2,7 +2,7 @@
 	<v-container>
 		<v-layout row>
 			<v-flex xs12 sm6 offset-sm3>
-				<h4 class="primary--text">Create</h4>
+				<h4 class="primary--text">Создание Новостей</h4>
 			</v-flex>
 		</v-layout>
 		<v-layout row>
@@ -12,7 +12,7 @@
 						<v-flex xs12 sm6 offset-sm3>
 							<v-text-field
                               name="title"
-                              label="Title"
+                              label="Имя"
                               id="title"
                               v-model="title"
                               required
@@ -23,7 +23,7 @@
 						<v-flex xs12 sm6 offset-sm3>
 							<v-text-field
                               name="location"
-                              label="Location"
+                              label="Место"
                               id="location"
                               v-model="location"
                               required
@@ -31,10 +31,18 @@
 						</v-flex>
 					</v-layout>
 					<v-layout row>
-						<v-flex xs12 sm6 offset-sm3>
-							<v-btn raised class="primary" @click="onPickFile">File</v-btn>
-							<input type="file" style="display:none" ref="fileInput" accept="image/*" @change="onFilePicked">
+						 <v-flex xs12 sm6 offset-sm3>
+							<!---<v-btn raised class="primary" @click="onPickFile">File</v-btn>
+							<input type="file" style="display:none" ref="fileInput" accept="image/*" @change="onFilePicked">-->
+							<v-text-field
+                              name="imageUrl"
+                              label="ImageURL"
+                              id="imageUrl"
+                              v-model="imageUrl"
+                              required
+							></v-text-field>
 						</v-flex>
+
 					</v-layout>
 					<v-layout row>
 						<v-flex xs12 sm6 offset-sm3>
@@ -45,7 +53,7 @@
 						<v-flex xs12 sm6 offset-sm3>
 							<v-text-field
                               name="description"
-                              label="Description"
+                              label="Описание"
                               id="description"
                               v-model="description"
                               multi-line
@@ -85,8 +93,8 @@ export default{
 		return{
 			title: '',
 			location: '',
-			imageUrl: '',
 			description: '',
+			imageUrl: '',
 			date: new Date().toISOString().substr(0, 10),
 			time: new Date(),
 			image: null
@@ -96,7 +104,7 @@ export default{
 		formIsValid(){
 			return this.title !== '' &&
 			 this.location !== '' &&
-			  this.imageUrl !== '' &&
+			  this.image !== '' &&
 			   this.description !== ''
 		},
 		submittableDateTime(){
@@ -118,17 +126,17 @@ export default{
 			if(!this.formIsValid){
 				return
 			}
-			if(!this.image){
+			if(!this.imageUrl){
 				return
 			}
 			const newsData = {
 				title: this.title,
 				location: this.location,
-				image: this.image,
+				imageUrl: this.imageUrl,
 				description: this.description,
 				date: this.submittableDateTime
 			}
-			this.$store.dispatch('createNews',  newsData)
+			this.$store.dispatch('createNews2',  newsData)
 			this.$router.push('/news')
 		},
 		onPickFile(){

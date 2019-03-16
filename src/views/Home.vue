@@ -4,6 +4,7 @@
 			
 			<div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
     <div>
+      <h4>Наши Курсы!</h4>
          <v-carousel style="cursor: pointer;">
     <v-carousel-item
       v-for="item in items"
@@ -17,8 +18,12 @@
     </v-carousel-item>
   </v-carousel>
     </div>
-    <div>
-      <v-carousel style="cursor: pointer;">
+    <div class="right">
+      <h4>Новости</h4>
+      <v-flex xs12 class="test-xs-center" v-if="loading">
+        <v-progress-circular indeterminate class="primary--text" :width="7" :size="70"></v-progress-circular>
+      </v-flex>
+      <v-carousel style="cursor: pointer;" v-if="!loading">
     <v-carousel-item
       v-for="novos in news"
       :key="novos.id"
@@ -44,6 +49,9 @@ export default {
      },
      news(){
       return this.$store.getters.loadedNews
+     },
+     loading(){
+      return this.$store.getters.loading
      }
   },
     methods:{
@@ -65,5 +73,12 @@ export default {
   color:white;
   font-size: 2em;
   padding: 30px;
+}
+h4{
+  font-size: 2.25em;
+
+}
+.right{
+  text-align: right;
 }
 </style>

@@ -109,11 +109,6 @@
                        	icon: 'contact_support',
                        	title: 'О нас',
                        	route: '/about'
-                       },
-                       {
-                       	icon: 'input',
-                       	title: 'Войти',
-                       	route: '/Войти'
                        }
 				]
 			}
@@ -128,4 +123,7 @@
 </script>
 
 <style scoped>
+	v-btn{
+		text-decoration-style: none!important;
+	}
 </style>

@@ -3,6 +3,6 @@ export default{
     authDomain: "englishinaktau.firebaseapp.com",
     databaseURL: "https://englishinaktau.firebaseio.com",
     projectId: "englishinaktau",
-    storageBucket: "englishinaktau.appspot.com",
+    storageBucket: "gs://englishinaktau.appspot.com",
     messagingSenderId: "325357195586"
 }

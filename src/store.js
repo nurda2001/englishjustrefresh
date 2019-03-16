@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import generalModule from './store/general'
 import userModule from './store/user'
+import * as firebase from 'firebase'
 
 Vue.use(Vuex)
 
@@ -9,8 +10,8 @@ export default new Vuex.Store({
 	modules:{
    userModule,
    generalModule},
-
   state: {
+    loading: false,
       loadedCourses: [
       {
             id: 'ielts',
@@ -42,14 +43,16 @@ export default new Vuex.Store({
       {
             id: 'news1',
             imageUrl: 'https://i.pinimg.com/originals/f2/e0/47/f2e047de368acedbffc3ffc012992ac0.jpg',
-            title: 'Новость дня',
-            description: 'asdsad'
+            title: 'News Testing loader ',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio nisi quia enim, magnam, earum ab maxime totam id ullam ducimus eum. Optio nemo fuga temporibus, cupiditate. Inventore fugiat quo porro modi tempore quasi obcaecati, facilis reprehenderit accusantium vitae velit fugit ipsa at voluptas, perspiciatis in incidunt autem repellat quis tenetur commodi fuga. Qui sapiente vel nesciunt mollitia cupiditate, eos deserunt quasi maiores quod recusandae consectetur at praesentium, alias, aspernatur dolor nostrum sequi repellendus. Vero reprehenderit voluptates, quis quod dolores. Hic nisi ullam, quam fugiat dolorum ipsa fugit soluta, sapiente recusandae obcaecati velit sed! Cumque officiis sint, quas deleniti aliquid modi.',
+            date: new Date()
           },
           {
             id: 'new2',
             imageUrl: 'https://images5.alphacoders.com/609/thumb-1920-609173.jpg',
-            title: 'Прикол',
-            description: 'asdsad'
+            title: 'Loader 2',
+            description: 'asdsad',
+            date: new Date()
           }
       ],
       user:{
@@ -60,28 +63,92 @@ export default new Vuex.Store({
   mutations: {
    createNews(state, payload){
    	state.loadedNews.push(payload)
+   },
+   setLoadedSNews(state, payload){
+   	state.loadedNews = payload
+   },
+   setLoading (state, payload){
+   	state.loading = payload
    }
   },
   actions: {
-  	loadNews ({commit}){
-  		firebase.database().ref('news').once('value')
+  	loadNews2({commit}){
+  		commit('setLoading', true)
+         firebase.database().ref('FreshNews').once('value')
+         .then((data) => {
+         	const news = []
+         	const obj = data.val()
+         	for (let key in obj){
+         		news.push({
+                   id: key,
+  					title: obj[key].title,
+  					description: obj[key].description,
+  					imageUrl: obj[key].imageUrl,
+  					date: obj[key].date
+         		})
+         	}
+         	commit('setLoadedSNews', news)
+         	commit('setLoading', false)
+         })
+         .catch(
+         	(error) =>{
+         		console.log(error)
+         		commit('setLoading', true)
+         	})
   	},
+  	createNews2 ({commit}, payload){
+     const news = {
+     	title: payload.title,
+     	location: payload.location,
+     	description: payload.description,
+     	imageUrl: payload.imageUrl,
+     	date: payload.date.toISOString()
+     }
+     firebase.database().ref('FreshNews').push(news)
+     .then((data) => {
+     	console.log(data)
+     	const key = data.key
+     	commit('createNews', {
+     		...news,
+     		id: key
+     	})
+     })
+     .then((error) => {
+     	console.log(error)
+     }) 
+ },
    createNews ({commit, getters}, payload){
      const news = {
      	title: payload.title,
      	location: payload.location,
-     	imageUrl: payload.imageUrl,
      	description: payload.description,
-     	date: payload.date.toISOString(),
+     	imageUrl: payload.imageUrl,
+     	date: payload.date.toISOString()
      }
+     let imageUrl
+     let key 
      firebase.database().ref('news').push(news)
      .then((data) => {
      	const key = data.key
+     	return key
+     }) 
+     then( key =>{
+     	const filename = payload.image.name
+     	const ext = filename.slice(filename.lassIndeOf('.'))
+     	 return firebase.storage().ref('news' + key + '.' + ext).put(payload.image)
+     })
+     .then(fileData => {
+      imageUrl  = fileData.metadata.downloadURLs[0]
+      return firebase.database().ref('news').child(key).update({imageUrl: imageUrl})
+     })
+     .then(() => {
+     	const key = data.key
      	commit('createNews', {
      		...news, 
+     		imageUrl: imageUrl, 
      		id: key
      	})
-     }) 
+     })
      .catch((error) => {
      	console.log(error)
      })

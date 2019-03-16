@@ -27,5 +27,6 @@ new Vue({
   	firebase.auth().onAuthStateChanged(function(user) {
     vm.$store.dispatch('STATE_CHANGED', user)
                                        });
+  	this.$store.dispatch('loadNews2')
            }
 }).$mount('#app')

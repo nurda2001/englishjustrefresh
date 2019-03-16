@@ -14,7 +14,7 @@ import New from '@/components/New.vue'
 import Create from '@/components/CreateNews.vue'
 import SignUp from '@/components/Signup.vue'
 import SignIn from '@/components/Signin.vue'
-
+import AuthGuard from './auth-guard'
 
 Vue.use(Router)
 
@@ -49,12 +49,6 @@ export default new Router({
       name: 'students',
       
       component: Words
-    },
-    {
-      path: '/signup',
-      name: 'signup',
-      
-      component: Signup
     },
     {
       path: '/signin',
@@ -100,11 +94,6 @@ export default new Router({
       path: '/creatingNews',
       name: 'CRN',
       component: Create
-    },
-        {
-      path:'/Регистрация',
-      name: 'signup',
-      component: SignUp
     },
     {
       path:'/Войти',

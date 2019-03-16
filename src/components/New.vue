@@ -5,9 +5,13 @@
            	<v-img :src="item.imageUrl"></v-img>
            </div>
            <div>
-           	<h3 class="title">{{item.title}}</h3>
-           	<p class="normal"> {{item.date}} </p><br>
-            <p class="normal"> {{item.description}} </p>
+           	<v-layout row>
+      <v-flex xs12 sm6 offset-sm3>
+        <h4 class="title">{{item.title}}</h4>
+        <p>{{item.date | date}} {{ item.location}}</p>
+        <p>{{item.description}}</p>
+      </v-flex>
+    </v-layout>
            </div>
 		</div>
 	</v-container>
