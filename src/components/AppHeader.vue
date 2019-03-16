@@ -17,7 +17,7 @@
 			<router-link to="/" tag="span" style=" cursor: pointer">
 			<v-toolbar-title v-text="'EnglishInAktau'"></v-toolbar-title>
 		</router-link>
-		<v-toolbar-title v-text="'Для Взрослых и детей'" style="font-weight: 300;" class="hidden-sm-and-down"></v-toolbar-title>
+		<v-toolbar-title v-text="'Английский для взрослых и детей'" style="font-weight: 300;" class="hidden-sm-and-down"></v-toolbar-title>
 			<v-spacer></v-spacer>
 			<v-toolbar-items class="hidden-sm-and-down">
 				<v-btn v-for="(item, i) in menuItems" flat :key="`menuItem${i}`" :to="item.route" >

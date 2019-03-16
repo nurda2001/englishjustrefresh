@@ -1,10 +1,5 @@
 <template>
 	<v-container>
-		
-			
-			<div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
-    <div>
-      <h4>Наши Курсы!</h4>
          <v-carousel style="cursor: pointer;">
     <v-carousel-item
       v-for="item in items"
@@ -17,26 +12,7 @@
     </center>
     </v-carousel-item>
   </v-carousel>
-    </div>
-    <div class="right">
-      <h4>Новости</h4>
-      <v-flex xs12 class="test-xs-center" v-if="loading">
-        <v-progress-circular indeterminate class="primary--text" :width="7" :size="70"></v-progress-circular>
-      </v-flex>
-      <v-carousel style="cursor: pointer;" v-if="!loading">
-    <v-carousel-item
-      v-for="novos in news"
-      :key="novos.id"
-      :src="novos.imageUrl"
-      @click="LoadNew(novos.id)"
-    >
-    <center>
-      <div class="title">{{novos.title}}</div>
-    </center>
-    </v-carousel-item>
-  </v-carousel> 
-		</div>
-  </div>
+    
 	
 </v-container>
 </template>
