@@ -11,7 +11,7 @@
                Tел:  <a href="tel:+77077203421">8 707 720 34 21</a>,<a href="tel:+77475167110"> 8747 516 71 10</a><br><br>
                <a href="https://wa.me/+77077203421"><button class="uk-button uk-button-default">Записаться через What's App</button></a> <br><br>
 
-               Instagramm: english.zvezda.aktau<br><br>
+               Instagramm: <a href="https://www.instagram.com/english.zvezda.aktau/?hl=ru">english.zvezda.aktau</a><br><br>
 
                Электронная почта:<a href="mailto:info@englishinaktau.kz"> info@englishinaktau.kz <br><br><br></a><p></p>
                <img  src="http://englishinaktau.kz/img/local.jpg" uk-tooltip="title:Просмотрите карту; pos: top" title="" aria-expanded="false">
