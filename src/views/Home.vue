@@ -1,6 +1,6 @@
 <template>
 	<v-container>
-         <v-carousel style="cursor: pointer;">
+         <!--<v-carousel style="cursor: pointer;">
     <v-carousel-item
       v-for="item in items"
       :key="item.id"
@@ -11,14 +11,114 @@
       <div class="title">{{item.title}}</div>
     </center>
     </v-carousel-item>
+  </v-carousel> -->
+    <div class="uk-card uk-card-default uk-card-body" style="z-index: 980;" uk-sticky="offset: 0; bottom: #top"> <a href="First" uk-scroll>Подготовка к Ielts </a> <a href="#Second" uk-scroll> Персональные Курсы </a> <a href="#Third" uk-scroll> Английский для детей </a> <a href="#Fourth" uk-scroll> Турецкий и Китайский язык </a></div>
+    <div id="Ielts">
+      <v-container>
+    <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
+           <div>
+            <v-img src="https://is5-ssl.mzstatic.com/image/thumb/Purple124/v4/87/08/54/87085448-f6d6-80d6-c1f6-1a0e1df1f5c9/AppIcon-0-1x_U007emarketing-0-0-85-220-0-7.png/1200x630wa.png"></v-img>
+           </div>
+           <div>
+            <h3 class="title">Подготовка к Ielts</h3>
+            <p class="normal"> IELTS (International English Language Testing System) — международное система тестирования по английскому языку. Этот тест позволяет определить уровень владения английским языком у людей, для которых он не является родным. Обычно этот тест проходят те, кто собирается эмигрировать, проходить практику или учиться в англоязычной среде. </p>
+           </div>
+    </div>
+    <center><h3 class="title" style="margin-bottom: 15px">Наши Результаты</h3></center> 
+       <v-carousel>
+    <v-carousel-item
+      v-for="(item,i) in items"
+      :key="i"
+      :src="item.src"
+      contain
+    ></v-carousel-item>
   </v-carousel>
-    
-	
+   </v-container>
+     </div>
+ 
+<div class="empty">
+  
+</div>
+      <v-container>
+    <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
+           <div>
+            <v-img src="https://chelseakrost.com/wp-content/uploads/2014/11/Personal-Branding-2.png" id="Second"></v-img>
+           </div>
+           <div>
+            <h3 class="title">Персональные Курсы</h3>
+            <p class="normal"> 1.Индивидуальные курсы-это уникальный подход к каждому студенту нашего центра. <br>
+2.Преимущества индивидуальных уроков в том, что вы можете сами контролировать скорость процесса обучения. <br>
+3.Это эксклюзивное время выделенное именно для вас. <br> </p>
+           </div>
+    </div>
+  </v-container>
+
+<div class="empty">
+  
+</div>
+
+   <div id="Third">
+      <v-container>
+    <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
+           <div>
+            <v-img src="http://wigsforkidsbc.com/media/slider/002.jpg"></v-img>
+           </div>
+           <div>
+            <h3 class="title">Английский для детей</h3>
+            <p class="normal"> С каждым годом становится все очевиднее снижение возраста начала обучения английскому языку — или«ранний старт»*. Раннее обучение отвечает потребности взрослых, желающих, чтобы их дети как можно более качественно знали иностранный язык. Начинать учить иностранный язык в детстве гораздо легче: ребенок способен больше запоминать и лучше воспринимать. Посещая курсы английского для детей, ребенок избавляется от многих трудностей, с которыми сталкиваются при изучении языка взрослые. При этом, занятия у нас для детей увлекательные, что только способствует их эффективности.</p>
+           </div>
+    </div>
+  </v-container>
+  </div>
+
+<div class="empty">
+  
+</div>
+
+<div id="Fourth">
+      <v-container>
+    <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
+           <div>
+            <v-img src="https://www.propertyturkey.com/uploads/pages/larg/turkey-and-china.jpg"></v-img>
+           </div>
+           <div>
+            <h3 class="title">Турецкий и Китайский языки</h3>
+            <p class="normal"> Являясь мостом между Европой и Ближним Востоком, Турция и турецкий язык издревне привлекали внимание людей из разных частей света. На сегодняшний день, в среднем, около 100 млн. человек говорят на турецком языке. И вы можете стать одним из них, мы даем вам такую возможность. А изучив турецкий язык, вы откроете для себя дополнительные возможности в областях бизнеса, учебы, науки, туризма и др.   Китайский язык входит в китайско-тибетскую (сино-тибетскую) языковую семью. Будучи официальным языком КНР, Тайваня и Сингапура, он также распространен в Индонезии, Камбодже, Лаосе, Вьетнаме, Мьянме, Малайзии, Таиланде и других странах. В общей сложности на нем говорят свыше 1 миллиарда человек. Китайский язык является одним из официальных и рабочих языков ООН. В китайском языке выделяется 7 диалектных групп: северная (北, самая многочисленная — свыше 800 миллионов говорящих), у (吴), сян (湘), гань (赣), хакка (客家), юэ (粤), минь (闽). </p>
+           </div>
+    </div>
+  </v-container>
+  </div>
+
+
+
+
+
+
+
+
 </v-container>
 </template>
 
 <script>
 export default {
+  data(){
+    return{
+        items: [
+          {
+            src: 'https://instagram.fhel2-1.fna.fbcdn.net/vp/4c25ba928609cc0943892bab980354fa/5D079451/t51.2885-15/e35/45672809_2209538939268230_6348071293349058366_n.jpg?_nc_ht=instagram.fhel2-1.fna.fbcdn.net'
+          },
+          {
+            src: 'https://instagram.fhel5-1.fna.fbcdn.net/vp/f839132401071f1e39f7dba2c7b242c4/5D079783/t51.2885-15/e35/46141877_186932155591277_6509963808199239068_n.jpg?_nc_ht=instagram.fhel5-1.fna.fbcdn.net'
+          },
+          {
+            src: 'https://instagram.fhel5-1.fna.fbcdn.net/vp/8792b469ef4b5abdfc57e2a5651c3a99/5D1403AE/t51.2885-15/e35/45298695_264459637575778_3118709193057816908_n.jpg?_nc_ht=instagram.fhel5-1.fna.fbcdn.net'
+          },
+          {
+            src: 'https://instagram.fhel5-1.fna.fbcdn.net/vp/aec2779fc7748e9b0e6990f57ac61ba0/5D20BB97/t51.2885-15/e35/45272131_336520173810834_8026041638802559279_n.jpg?_nc_ht=instagram.fhel5-1.fna.fbcdn.net'
+          }
+        ]
+      }
+  },
     computed:{
      items(){
       return this.$store.getters.loadedCourses
@@ -28,6 +128,23 @@ export default {
      },
      loading(){
       return this.$store.getters.loading
+     },
+     btntitle(){
+      return 
+          [
+          {
+            title: 'Подготовка к Ielts'
+          },
+          {
+            title: 'Персональные Курсы'
+          },
+          {
+            title: 'Английский для детей'
+          },
+          {
+            title: 'Китайский и Турецкий язык'
+          }
+          ]
      }
   },
     methods:{
@@ -42,14 +159,7 @@ export default {
 </script>
 
 <style scoped>
-.title{
-  position: absolute;
-  bottom: 50px;
-  background-color: rgba(0,0,0,0.5);
-  color:white;
-  font-size: 2em;
-  padding: 30px;
-}
+
 h4{
   font-size: 2.25em;
 
@@ -57,4 +167,22 @@ h4{
 .right{
   text-align: right;
 }
+.tooltip {
+ width: 200px;
+ position: fixed;
+ top:auto;
+ bottom:0px;
+ right:0px;
+ left:auto;
+}
+.special{
+  position: fixed;
+}
+.normal{
+      font-size: 1.25em;
+      padding:5px;
+  }
+  .empty{
+    height: 200px;
+  }
 </style>
