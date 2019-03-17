@@ -12,20 +12,12 @@
     </center>
     </v-carousel-item>
   </v-carousel> -->
-    <div class="uk-card uk-card-default uk-card-body" style="z-index: 980;" uk-sticky="offset: 0; bottom: #top"> <a href="First" uk-scroll>Подготовка к Ielts </a> <a href="#Second" uk-scroll> Персональные Курсы </a> <a href="#Third" uk-scroll> Английский для детей </a> <a href="#Fourth" uk-scroll> Турецкий и Китайский язык </a></div>
+    <div class="uk-card uk-card-default uk-card-body" style="z-index: 980;" uk-sticky="offset: 65; bottom: #top"> <a href="First" uk-scroll><v-btn class="secondary">Подготовка к Ielts</v-btn> </a> <a href="#Second" uk-scroll><v-btn class="secondary"> Персональные Курсы </v-btn></a> <a href="#Third" uk-scroll> <v-btn class="secondary"> Английский для детей </v-btn></a> <a href="#Fourth" uk-scroll><v-btn class="secondary"> Турецкий и Китайский язык </v-btn></a></div>
     <div id="Ielts">
       <v-container>
     <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
            <div>
-            <v-img src="https://is5-ssl.mzstatic.com/image/thumb/Purple124/v4/87/08/54/87085448-f6d6-80d6-c1f6-1a0e1df1f5c9/AppIcon-0-1x_U007emarketing-0-0-85-220-0-7.png/1200x630wa.png"></v-img>
-           </div>
-           <div>
-            <h3 class="title">Подготовка к Ielts</h3>
-            <p class="normal"> IELTS (International English Language Testing System) — международное система тестирования по английскому языку. Этот тест позволяет определить уровень владения английским языком у людей, для которых он не является родным. Обычно этот тест проходят те, кто собирается эмигрировать, проходить практику или учиться в англоязычной среде. </p>
-           </div>
-    </div>
-    <center><h3 class="title" style="margin-bottom: 15px">Наши Результаты</h3></center> 
-       <v-carousel>
+            <v-carousel>
     <v-carousel-item
       v-for="(item,i) in items"
       :key="i"
@@ -33,9 +25,14 @@
       contain
     ></v-carousel-item>
   </v-carousel>
-   </v-container>
-     </div>
- 
+           </div>
+           <div>
+            <h3 class="title">Подготовка к Ielts</h3>
+            <p class="normal"> IELTS (International English Language Testing System) — международное система тестирования по английскому языку. Этот тест позволяет определить уровень владения английским языком у людей, для которых он не является родным. Обычно этот тест проходят те, кто собирается эмигрировать, проходить практику или учиться в англоязычной среде. </p>
+           </div>
+    </div>
+ </v-container>
+</div>
 <div class="empty">
   
 </div>
@@ -48,7 +45,8 @@
             <h3 class="title">Персональные Курсы</h3>
             <p class="normal"> 1.Индивидуальные курсы-это уникальный подход к каждому студенту нашего центра. <br>
 2.Преимущества индивидуальных уроков в том, что вы можете сами контролировать скорость процесса обучения. <br>
-3.Это эксклюзивное время выделенное именно для вас. <br> </p>
+3.Это эксклюзивное время выделенное именно для вас. <br>
+Программа будет полезной как для практикующих бухгалтеров, так и для студентов, изучающих бухгалтерию. Изучив этот курс, вы сможете самостоятельно заполнять отчётную документацию на английском языке, вести деловую переписку, готовить и презентовать отчёты по деятельности компании и др. Ждем вас в нашем центре в городе Актау. </p>
            </div>
     </div>
   </v-container>
