@@ -1,6 +1,15 @@
 <template>
 	<v-container>
-		<v-layout row wrap>
+		 <v-layout row wrap v-if="loading">
+      <v-flex xs12 class="text-xs-center">
+        <v-progress-circular
+        indeterminate
+        class="secondary--text"
+        :width="7"
+        :size="70"></v-progress-circular>
+      </v-flex>
+    </v-layout>
+		<v-layout row wrap v-else>
 			<v-flex>
 				<v-card v-for="item in items" :key="item.id" class="secondary">
 					<div class="margin">
@@ -32,11 +41,28 @@
 
 <script>
 	export default{
+		data(){
+			return{
+				show: false
+			}
+		},
 		computed:{
+			isUserAutheticated(){
+        return this.$store.getters.isUserAutheticated
+      },
 			items(){
             return this.$store.getters.loadedNews
-		}
-	}
+		},
+		loading(){
+      return this.$store.getters.loading
+     }
+	},
+	watch:{
+      isUserAutheticated(val){
+        if(val === true)
+          this.show = true
+      }
+    }
 	}
 </script>
 

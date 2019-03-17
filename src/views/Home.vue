@@ -12,7 +12,7 @@
     </center>
     </v-carousel-item>
   </v-carousel> -->
-    <div class="uk-card uk-card-default uk-card-body" style="z-index: 1;" uk-sticky="offset: 65; bottom: #top; media:900"> <a href="First" uk-scroll><v-btn class="secondary">Подготовка к Ielts</v-btn> </a> <a href="#Second" uk-scroll><v-btn class="secondary"> Персональные Курсы </v-btn></a> <a href="#Third" uk-scroll> <v-btn class="secondary"> Английский для детей </v-btn></a> <a href="#Fourth" uk-scroll><v-btn class="secondary"> Турецкий и Китайский язык </v-btn></a></div>
+    <center><div class="uk-card uk-card-default uk-card-body" style="z-index: 1; height: 0px;" uk-sticky="offset: 65; bottom: #top; media:900"> <a href="First" uk-scroll><v-btn class="secondary">Подготовка к Ielts</v-btn> </a> <a href="#Second" uk-scroll><v-btn class="secondary"> Персональные Курсы </v-btn></a> <a href="#Third" uk-scroll> <v-btn class="secondary"> Английский для детей </v-btn></a> <a href="#Fourth" uk-scroll><v-btn class="secondary"> Турецкий и Китайский язык </v-btn></a></div></center>
     <div id="Ielts">
       <v-container>
     <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
@@ -33,13 +33,13 @@
     </div>
  </v-container>
 </div>
-<div class="empty">
+<div class="empty" id="Second">
   
 </div>
       <v-container>
     <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
            <div>
-            <v-img src="https://chelseakrost.com/wp-content/uploads/2014/11/Personal-Branding-2.png" id="Second"></v-img>
+            <v-img src="https://chelseakrost.com/wp-content/uploads/2014/11/Personal-Branding-2.png" ></v-img>
            </div>
            <div>
             <h3 class="title">Персональные Курсы</h3>
@@ -51,15 +51,22 @@
     </div>
   </v-container>
 
-<div class="empty">
+<div class="empty" id="Third">
   
 </div>
 
-   <div id="Third">
+   <div>
       <v-container>
     <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
            <div>
-            <v-img src="http://wigsforkidsbc.com/media/slider/002.jpg"></v-img>
+            <v-carousel>
+    <v-carousel-item
+      v-for="(kids,i) in kphotos"
+      :key="i"
+      :src="kids.src"
+      contain
+    ></v-carousel-item>
+  </v-carousel>
            </div>
            <div>
             <h3 class="title">Английский для детей</h3>
@@ -114,6 +121,17 @@ export default {
           {
             src: 'https://instagram.fhel5-1.fna.fbcdn.net/vp/aec2779fc7748e9b0e6990f57ac61ba0/5D20BB97/t51.2885-15/e35/45272131_336520173810834_8026041638802559279_n.jpg?_nc_ht=instagram.fhel5-1.fna.fbcdn.net'
           }
+        ],
+        kphotos:[
+        {
+            src: 'http://englishinaktau.kz/img/Kids.jpg'
+          },
+          {
+            src: 'http://englishinaktau.kz/img/Kids-2.jpg'
+          },
+          {
+            src: 'http://englishinaktau.kz/img/Kids-1.jpg'
+          }
         ]
       }
   },
@@ -126,23 +144,6 @@ export default {
      },
      loading(){
       return this.$store.getters.loading
-     },
-     btntitle(){
-      return 
-          [
-          {
-            title: 'Подготовка к Ielts'
-          },
-          {
-            title: 'Персональные Курсы'
-          },
-          {
-            title: 'Английский для детей'
-          },
-          {
-            title: 'Китайский и Турецкий язык'
-          }
-          ]
      }
   },
     methods:{

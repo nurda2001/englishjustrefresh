@@ -69,7 +69,18 @@ export default new Vuex.Store({
    },
    setLoading (state, payload){
    	state.loading = payload
-   }
+   },
+    updateNew (state, payload){
+      const news = state.loadedNews.find(news => {
+        return news.id === payload.id
+      })
+      if(payload.title){
+        news.title = payload.title
+      }
+      if(payload.description){
+        news.description = payload.description
+      }
+    }
   },
   actions: {
   	loadNews2({commit}){
@@ -84,7 +95,8 @@ export default new Vuex.Store({
   					title: obj[key].title,
   					description: obj[key].description,
   					imageUrl: obj[key].imageUrl,
-  					date: obj[key].date
+  					date: obj[key].date,
+            location: obj[key].location
          		})
          	}
          	commit('setLoadedSNews', news)
@@ -100,59 +112,61 @@ export default new Vuex.Store({
      const news = {
      	title: payload.title,
      	location: payload.location,
+      imageUrl: payload.imageUrl,
      	description: payload.description,
-     	imageUrl: payload.imageUrl,
      	date: payload.date.toISOString()
      }
+     let imageUrl
+     let key
      firebase.database().ref('FreshNews').push(news)
      .then((data) => {
      	console.log(data)
      	const key = data.key
-     	commit('createNews', {
-     		...news,
-     		id: key
-     	})
+     	//commit('createNews', {
+     		//...news,
+     		//id: key
+     	//})
+      return key
+     })
+     .then(key =>{
+      const filename = payload.image.name
+      const ext = filename.slice(filename.lastIndexOf('.'))
+      return firebase.storage().ref('News/' + key + '.' + ext).put(payload.image)
+     })
+     .then(fileData => {
+       imageUrl = fileData.metadata.downloadURLs[0]
+       return firebase.database().ref('News').child(key).update({imageUrl: imageUrl})
+     })
+     .then(()=>{
+      commit('createNews2', {
+        ...news,
+        imageUrl: imageUrl,
+        id: key
+        })
      })
      .then((error) => {
      	console.log(error)
      }) 
  },
-   createNews ({commit, getters}, payload){
-     const news = {
-     	title: payload.title,
-     	location: payload.location,
-     	description: payload.description,
-     	imageUrl: payload.imageUrl,
-     	date: payload.date.toISOString()
-     }
-     let imageUrl
-     let key 
-     firebase.database().ref('news').push(news)
-     .then((data) => {
-     	const key = data.key
-     	return key
-     }) 
-     then( key =>{
-     	const filename = payload.image.name
-     	const ext = filename.slice(filename.lassIndeOf('.'))
-     	 return firebase.storage().ref('news' + key + '.' + ext).put(payload.image)
-     })
-     .then(fileData => {
-      imageUrl  = fileData.metadata.downloadURLs[0]
-      return firebase.database().ref('news').child(key).update({imageUrl: imageUrl})
-     })
-     .then(() => {
-     	const key = data.key
-     	commit('createNews', {
-     		...news, 
-     		imageUrl: imageUrl, 
-     		id: key
-     	})
-     })
-     .catch((error) => {
-     	console.log(error)
-     })
-   }
+    updateNewData ({commit}, payload){
+      commit('setLoading', true)
+      const updateObj = {}
+      if(payload.title){
+        updateObj.title = payload.title
+      }
+      if(payload.description){
+        updateObj.description = payload.description
+      }
+      firebase.database().ref('FreshNews').child(payload.id).update(updateObj)
+       .then(() => {
+        commit('setLoading', false)
+        commit('updateNew', payload)
+       })
+       .catch(error =>{
+        console.log(error)
+        commit('setLoading', false)
+       })
+    }
   },
   getters: {
   	loadedCourses (state) {
@@ -160,6 +174,7 @@ export default new Vuex.Store({
   			return courseA.date > courseB.date
   		})
   	},
+    loading: (state) => state.loading,
   	loadedCourse (state) {
   		return (courseId) => {
   			return state.loadedCourses.find((course) => {

@@ -32,15 +32,15 @@
 					</v-layout>
 					<v-layout row>
 						 <v-flex xs12 sm6 offset-sm3>
-							<!---<v-btn raised class="primary" @click="onPickFile">File</v-btn>
-							<input type="file" style="display:none" ref="fileInput" accept="image/*" @change="onFilePicked">-->
-							<v-text-field
+							<v-btn raised class="primary" @click="onPickFile">File</v-btn>
+							<input type="file" style="display:none" ref="fileInput" accept="image/*" @change="onFilePicked">
+							<!---<v-text-field
                               name="imageUrl"
                               label="ImageURL"
                               id="imageUrl"
                               v-model="imageUrl"
                               required
-							></v-text-field>
+							></v-text-field>-->
 						</v-flex>
 
 					</v-layout>

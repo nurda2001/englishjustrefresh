@@ -38,6 +38,9 @@ export default{
     	firebase.auth().signInWithEmailAndPassword(payload.email, payload.password)
         .then( user => {
         	commit('SET_PROCESSING', false)
+          const newUser ={
+            id: user.uid
+          }
         	commit('CLEAR_ERROR')
         })
         .catch(function(error) {

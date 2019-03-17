@@ -9,10 +9,12 @@ import VueInstagram from 'vue-instagram'
 import DateFilter from './filter/date'
 import firebaseConfig from './config/firebase'
 import firebase from 'firebase'
+import EditNewsDetails from './components/EditNewsDetails'
  
 firebase.initializeApp(firebaseConfig)
 Vue.use(VueInstagram), 
 Vue.filter('date', DateFilter)
+Vue.component('app-edit-news-detail', EditNewsDetails)
 
 Vue.use(Vuetify)
 
