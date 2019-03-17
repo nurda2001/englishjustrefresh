@@ -12,7 +12,7 @@
     </center>
     </v-carousel-item>
   </v-carousel> -->
-    <div class="uk-card uk-card-default uk-card-body" style="z-index: 1;" uk-sticky="offset: 65; bottom: #top; media:640"> <a href="First" uk-scroll><v-btn class="secondary">Подготовка к Ielts</v-btn> </a> <a href="#Second" uk-scroll><v-btn class="secondary"> Персональные Курсы </v-btn></a> <a href="#Third" uk-scroll> <v-btn class="secondary"> Английский для детей </v-btn></a> <a href="#Fourth" uk-scroll><v-btn class="secondary"> Турецкий и Китайский язык </v-btn></a></div>
+    <div class="uk-card uk-card-default uk-card-body" style="z-index: 1;" uk-sticky="offset: 65; bottom: #top; media:900"> <a href="First" uk-scroll><v-btn class="secondary">Подготовка к Ielts</v-btn> </a> <a href="#Second" uk-scroll><v-btn class="secondary"> Персональные Курсы </v-btn></a> <a href="#Third" uk-scroll> <v-btn class="secondary"> Английский для детей </v-btn></a> <a href="#Fourth" uk-scroll><v-btn class="secondary"> Турецкий и Китайский язык </v-btn></a></div>
     <div id="Ielts">
       <v-container>
     <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
