@@ -312,7 +312,7 @@ h4{
 @media (min-width: 1025px) and (max-width: 1280px) {
   
   .device{
-    font-size: 1em;
+    font-size: 1.1em;
   }
 }
 
@@ -324,7 +324,7 @@ h4{
 @media (min-width: 768px) and (max-width: 1024px) {
   
   .device{
-    font-size: 0.8em;
+    font-size: 1em;
   }
 }
 
@@ -336,7 +336,7 @@ h4{
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   
   .device{
-    font-size: 0.6em;
+    font-size: 0.8em;
   }
 }
 
@@ -348,7 +348,7 @@ h4{
 @media (min-width: 481px) and (max-width: 767px) {
   
   .device{
-    font-size: 0.4em;
+    font-size: 0.6em;
   }
 }
 
@@ -360,7 +360,7 @@ h4{
 @media (min-width: 320px) and (max-width: 480px) {
   
   .device{
-    font-size: 0.2em;
+    font-size: 0.4em;
   }
 }
 
