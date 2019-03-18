@@ -34,31 +34,32 @@
 						 <v-flex xs12 sm6 offset-sm3>
 							<v-btn raised class="primary" @click="onPickFile">File</v-btn>
 							<input type="file" style="display:none" ref="fileInput" accept="image/*" @change="onFilePicked">
-							<!---<v-text-field
+							<v-text-field
                               name="imageUrl"
                               label="ImageURL"
                               id="imageUrl"
                               v-model="imageUrl"
                               required
-							></v-text-field>-->
+							></v-text-field>
 						</v-flex>
-
+                     
 					</v-layout>
 					<v-layout row>
 						<v-flex xs12 sm6 offset-sm3>
-							<v-img :src="imageUrl" height="300" contain></v-img>
-						</v-flex>
-					</v-layout>
-					<v-layout row>
-						<v-flex xs12 sm6 offset-sm3>
-							<v-text-field
+							<v-textarea
+          outline
                               name="description"
                               label="Описание"
                               id="description"
                               v-model="description"
                               multi-line
                               required
-							></v-text-field>
+							></v-textarea>
+						</v-flex>
+					</v-layout>
+					<v-layout row>
+						<v-flex xs12 sm6 offset-sm3>
+							<v-img :src="imageUrl" height="300" contain></v-img>
 						</v-flex>
 					</v-layout>
 					<v-layout row>
@@ -70,6 +71,7 @@
                      <v-flex xs12 sm6 offset-sm3>
                      	<v-date-picker v-model="date"></v-date-picker>
                      </v-flex>
+
                  </v-layout>
                  <v-layout row>
                      <v-flex xs12 sm6 offset-sm3>

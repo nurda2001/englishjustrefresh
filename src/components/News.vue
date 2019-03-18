@@ -10,8 +10,15 @@
       </v-flex>
     </v-layout>
 		<v-layout row wrap v-else>
+			<v-container fluid>
+					<v-layout row>
+						<v-flex>
+							<v-text-field label="Поиск Новостей" v-model="searchTerm"></v-text-field>
+					</v-flex>
+					</v-layout>
+				</v-container>
 			<v-flex>
-				<v-card v-for="item in items" :key="item.id" class="secondary">
+				<v-card v-for="item in filteredBooks" :key="item.id" class="white">
 					<div class="margin">
 					<v-container fluid>
 						<v-layout row>
@@ -21,12 +28,12 @@
 							<v-flex>
         <v-card-title primary-title>
           <div>
-            <h3 class="headline mb-0 white--text"> {{item.title}} </h3>
-            <div> {{ item.date | date }} {{item.location}} </div>
+            <h3 class="headline mb-0 dark--text"> {{item.title}} </h3>
+            <div> {{ item.date | date }} </div> <div class="orange--text"> {{item.location}} </div>
           </div>
         </v-card-title>
         <v-card-actions>
-          <v-btn flat color="orange" :to="'/news/' + item.id">Смотреть</v-btn>
+          <v-btn  color="orange" :to="'/news/' + item.id">Смотреть</v-btn>
       </v-card-actions>
     </v-flex>
 						</v-layout>
@@ -43,7 +50,8 @@
 	export default{
 		data(){
 			return{
-				show: false
+				show: false,
+				searchTerm: null,
 			}
 		},
 		computed:{
@@ -51,19 +59,21 @@
         return this.$store.getters.isUserAutheticated
       },
 			items(){
-            return this.$store.getters.loadedNews
+            return this.$store.getters.getNews
 		},
+		 
 		loading(){
       return this.$store.getters.loading
-     }
-	},
-	watch:{
-      isUserAutheticated(val){
-        if(val === true)
-          this.show = true
-      }
-    }
+     },
+     filteredBooks(){
+				let items = this.items
+				if(this.searchTerm)
+					items = items.filter(b => b.title.toLowerCase().indexOf(this.searchTerm.toLowerCase()) >=0
+						||  b.location.toLowerCase().indexOf(this.searchTerm.toLowerCase()) >=0)
+				return items
+			},
 	}
+}
 </script>
 
 

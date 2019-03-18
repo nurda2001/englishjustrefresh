@@ -18,7 +18,9 @@
       <v-flex xs12 sm6 offset-sm3>
         <h4 class="title">{{item.title}}</h4><template v-if="show">
               <app-edit-news-detail :news="item"></app-edit-news-detail>
+
             </template>
+            
         <p>{{item.date | date}} {{ item.location}}</p>
         <p>{{item.description}}</p>
       </v-flex>

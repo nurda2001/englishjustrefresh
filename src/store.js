@@ -175,6 +175,7 @@ export default new Vuex.Store({
   		})
   	},
     loading: (state) => state.loading,
+
   	loadedCourse (state) {
   		return (courseId) => {
   			return state.loadedCourses.find((course) => {
@@ -193,6 +194,7 @@ export default new Vuex.Store({
   				return news.id === newId
   			})
   		}
-  	}	
+  	},
+    getNews: (state) => state.loadedNews	
 }
 })

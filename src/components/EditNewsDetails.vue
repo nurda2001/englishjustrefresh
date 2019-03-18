@@ -1,8 +1,17 @@
 <template>
 	<v-dialog width="350px" persistent v-model="editDialog"> 
-		<v-btn fab small accent slot="activator">
-			<v-icon>edit</v-icon>
-		</v-btn>
+		<v-btn
+              color="pink"
+              dark
+              small
+              absolute
+              bottom
+              left
+              fab
+              slot="activator"
+            >
+              <v-icon>edit</v-icon>
+            </v-btn>
 		<v-card>
 			<v-container>
 				<v-layout row wrap>

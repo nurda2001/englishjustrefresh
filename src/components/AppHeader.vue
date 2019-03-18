@@ -15,7 +15,7 @@
 		<v-toolbar  fixed app color="White">
 			<v-toolbar-side-icon class="hidden-md-and-up" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
 			<router-link to="/" tag="span" style=" cursor: pointer">
-			<v-toolbar-title v-text="'EnglishInAktau'"></v-toolbar-title>
+			<v-toolbar-title v-text="'EnglishInAktau'" class="red--text"></v-toolbar-title>
 		</router-link>
 		<v-toolbar-title v-text="'Английский для взрослых и детей'" style="font-weight: 300;" class="hidden-sm-and-down"></v-toolbar-title>
 			<v-spacer></v-spacer>
