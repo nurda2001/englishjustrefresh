@@ -348,7 +348,7 @@ h4{
 @media (min-width: 481px) and (max-width: 767px) {
   
   .device{
-    font-size: 0.6em;
+    font-size: 0.55em;
   }
 }
 
@@ -360,7 +360,7 @@ h4{
 @media (min-width: 320px) and (max-width: 480px) {
   
   .device{
-    font-size: 0.4em;
+    font-size: 0.3em;
   }
 }
 
