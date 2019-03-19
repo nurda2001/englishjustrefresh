@@ -1,13 +1,13 @@
 <template>
   <div class="container">
-  	<center>
-  		<span v-if="loading"  uk-spinner="ratio: 4.5"></span>
+<center>
+  	<span v-if="loading"  uk-spinner="ratio: 4.5"></span>
   		<div v-else>
   		<h1 class="title">О нас</h1>
 <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
   			    <div>
        <div class="uk-card uk-card-default uk-card-hover uk-card-body">
-            <video src="http://www.englishinaktau.kz/video/video.mp4" loop="" playsinline="" uk-video="autoplay: inview" controls="controls" preload="none"></video>
+            <video src="https://firebasestorage.googleapis.com/v0/b/englishinaktau.appspot.com/o/video.mp4?alt=media&token=4e180664-b3da-4761-adbb-69b4b563bce3"    uk-video="autoplay: inview" controls="controls" preload="none"></video>
         </div>
              </div>
              <div>
@@ -35,7 +35,8 @@
 	export default{
  data(){
     return{
-      loading: true
+      loading: true 
+
     }
   },
   methods:{

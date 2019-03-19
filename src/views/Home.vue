@@ -236,7 +236,7 @@ export default {
       }
   },
     computed:{
-     items(){
+     item(){
       return this.$store.getters.loadedCourses
      },
      news(){
