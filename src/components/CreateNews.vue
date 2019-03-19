@@ -36,7 +36,7 @@
 							<input type="file" style="display:none" ref="fileInput" accept="image/*" @change="onFilePicked">
 							<v-text-field
                               name="imageUrl"
-                              label="ImageURL"
+                              label="ImageURL(дополнительно если нету URL, то загружать через File)"
                               id="imageUrl"
                               v-model="imageUrl"
                               required

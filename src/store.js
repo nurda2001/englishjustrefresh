@@ -148,6 +148,21 @@ export default new Vuex.Store({
      	console.log(error)
      }) 
  },
+ deleteNews ({commit}, payload){
+     const news = {
+      title: payload.title,
+      location: payload.location,
+      imageUrl: payload.imageUrl,
+      description: payload.description,
+      date: payload.date.toISOString()
+     }
+     let imageUrl
+     let key
+     firebase.database().ref('FreshNews').delete(news)
+     .then((error) => {
+      console.log(error)
+     }) 
+ },
     updateNewData ({commit}, payload){
       commit('setLoading', true)
       const updateObj = {}
