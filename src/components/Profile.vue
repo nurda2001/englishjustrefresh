@@ -14,7 +14,7 @@
                Instagramm: <a href="https://files.marden.kz/content/2017-12/ee8f4b4dc471ed1c1f72642afc69dddd.jpg">english.zvezda.aktau</a><br><br>
 
                Электронная почта:<a href="mailto:info@englishinaktau.kz"> info@englishinaktau.kz <br><br><br></a><p></p>
-               <img  src="http://englishinaktau.kz/img/local.jpg" uk-tooltip="title:Просмотрите карту; pos: top" title="" aria-expanded="false">
+               <img  src="https://files.marden.kz/content/2017-12/ee8f4b4dc471ed1c1f72642afc69dddd.jpg" uk-tooltip="title:Просмотрите карту; pos: top" title="" aria-expanded="false">
         </div>
     </div>
 </div>
@@ -25,7 +25,7 @@
 
 <script>
 	export default{
-	
+
 	}
 </script>
 
