@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		<h1 class="title">There are links for resources</h1>
+		<h1 class="title">Links to download</h1>
 		<ul><h1 class="title">
 			<li><a href="https://yadi.sk/d/a35d8S1IugW9X">Elementary</a></li>
 			<li><a href="https://yadi.sk/d/8sWF5SEqugWen">Pre-Intermediate</a></li>
