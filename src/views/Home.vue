@@ -213,13 +213,13 @@ export default {
             src: 'https://instagram.fhen2-1.fna.fbcdn.net/vp/c7ee7becb1529fb2f82c16cee19c1642/5D6FD597/t51.2885-15/e35/45272131_336520173810834_8026041638802559279_n.jpg?_nc_ht=instagram.fhen2-1.fna.fbcdn.net'
           },
           {
-            src: 'https://instagram.fhel5-1.fna.fbcdn.net/vp/2db28a5719cbe0edc4387995810adadb/5D368400/t51.2885-15/e35/55944170_661942707608989_4565645252121899371_n.jpg?_nc_ht=instagram.fhel5-1.fna.fbcdn.net'
+            src: 'https://instagram.fhel5-1.fna.fbcdn.net/vp/f9c6f1b3c011db1fdbc1edd1c8af3611/5DC468E3/t51.2885-15/e35/s1080x1080/61292575_331721724155339_794825563913516998_n.jpg?_nc_ht=instagram.fhel5-1.fna.fbcdn.net'
           },
           {
-            src: 'https://instagram.fhel2-1.fna.fbcdn.net/vp/4c25ba928609cc0943892bab980354fa/5D079451/t51.2885-15/e35/45672809_2209538939268230_6348071293349058366_n.jpg?_nc_ht=instagram.fhel2-1.fna.fbcdn.net'
+            src: 'https://instagram.fhel5-1.fna.fbcdn.net/vp/a525bb4f39ddc6ee958ec49c5c0d14aa/5D8AF735/t51.2885-15/e35/s1080x1080/60530507_726358207766899_4813087891593775015_n.jpg?_nc_ht=instagram.fhel5-1.fna.fbcdn.net'
           },
           {
-            src: 'https://instagram.fhel5-1.fna.fbcdn.net/vp/f839132401071f1e39f7dba2c7b242c4/5D079783/t51.2885-15/e35/46141877_186932155591277_6509963808199239068_n.jpg?_nc_ht=instagram.fhel5-1.fna.fbcdn.net'
+            src: 'https://instagram.fhel5-1.fna.fbcdn.net/vp/bff5fdc385d444c86bec5d5bbdb9aded/5DBF6B6C/t51.2885-15/e35/s1080x1080/61619019_147200886410784_8642894428524156145_n.jpg?_nc_ht=instagram.fhel5-1.fna.fbcdn.net'
           }
         ],
         kphotos:[
