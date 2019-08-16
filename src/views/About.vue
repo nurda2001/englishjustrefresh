@@ -1,8 +1,8 @@
 <template>
   <div class="container">
 <center>
-  	<span v-if="loading"  uk-spinner="ratio: 4.5"></span>
-  		<div v-else>
+  	
+  		<div>
   		<h1 class="title">О нас</h1>
 <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
   			    <div>
