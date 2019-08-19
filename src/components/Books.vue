@@ -1,8 +1,8 @@
 <template>
   <div class="container">
    <center> 
-    <span v-if="loading"  uk-spinner="ratio: 4.5"></span>
-    <div v-else class="uk-child-width-1-2@s uk-grid" uk-grid="">
+    
+    <div   class="uk-child-width-1-2@s uk-grid" uk-grid="">
      <div  class="container">
         <vue-instagram :token="token" :count="21"  class="columns is-multiline is-mobile" mediaType="image"  >
           <template slot="feeds" slot-scope="props">
