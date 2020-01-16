@@ -35,7 +35,7 @@ export default {
   },
   data(){
     return{
-      token: '1389524837.8deb35d.b89e0b2d9b8e4a60b9a19fa04615d841',
+      token: '4bfc3a9f379945ea920082d378e03178',
       loading: true
     }
   },
